@@ -1,0 +1,9 @@
+---
+installCRDs: true
+# DNS-01 Route53
+serviceAccount:
+  create: true
+  annotations:
+    eks.amazonaws.com/role-arn: "${role_cert_manager_acme}"
+extraArgs:
+  - --issuer-ambient-credentials
